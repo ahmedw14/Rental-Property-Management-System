@@ -1,6 +1,8 @@
 package controller;
 
 import java.util.ArrayList;
+
+import GUI.MainMenu;
 import model.*;
 import model.Property;
 public class EditListingController{
@@ -9,7 +11,7 @@ public class EditListingController{
 
 
     public EditListingController() {
-        db = new DBMS("jdbc:mysql://localhost/mydb", "root", "hello12345");
+    	db = new DBMS("jdbc:mysql://localhost/mydb", MainMenu.dbUsernameInput, MainMenu.dbPasswordInput);
         // db.registerProperty(propertyStatus, propertyType, numBedrooms, numBathrooms,furnished,
         // quadrant, address, loggedinEmail);
     }
@@ -17,13 +19,37 @@ public class EditListingController{
     public String[] getProperties() {
         return db.getPropertiesOfLandlord();
     }
+    public String[] getAllProperties() {
+        String[][] allPropertiesInfo = db.getPropertyInfo();
+        String[] propertyIds = new String [allPropertiesInfo.length];
+        for (int i = 0; i < allPropertiesInfo.length; i++) {
+            propertyIds[i] = allPropertiesInfo[i][7];
+        }
+        System.out.println(propertyIds.length);
+
+        
+        return propertyIds;
+    }
     public boolean payFee(int house_id){
-        return db.changeStatusOfProperty(house_id, "ACTIVE");
+        boolean to_return = db.changeStatusOfProperty(house_id, "ACTIVE");
+        if(to_return == true){
+            db.addNotifications(house_id);
+        }
+        
+        return to_return;
     }
     public String getFee(){
         return "$"+db.getFee();
     }
     public boolean changeStatus(int house_id, String Status){
+        if(Status.equalsIgnoreCase("ACTIVE")){
+            boolean to_return = db.changeStatusOfProperty(house_id, "ACTIVE");
+            if(to_return == true){
+                db.addNotifications(house_id);
+            }
+
+            return to_return;
+        }
         return db.changeStatusOfProperty(house_id, Status);
     }
     public void setPropertyModel(Property propertyModel) {

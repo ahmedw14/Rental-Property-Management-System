@@ -1,0 +1,8 @@
+Manager Report:
+
+Houses Rented: 1
+Houses Listed: 2
+Houses Active: 1
+Houses Rented:
+
+0.  Landlord's Name: Lord   Property Id: 2  Property address: 901 Shelby Drive

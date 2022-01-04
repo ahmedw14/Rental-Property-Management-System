@@ -1,0 +1,9 @@
+Manager Report:
+
+Houses Rented: 2
+Houses Listed: 21
+Houses Active: 12
+Houses Rented:
+
+0.  Landlord's Name: moussavi   Property Id: 3  Property address: 
+1.  Landlord's Name: vincent   Property Id: 5  Property address: St. Mary's
