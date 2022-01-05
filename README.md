@@ -34,9 +34,9 @@ The purpose of this application is to create a platform that landlords, property
 
 ![image](https://user-images.githubusercontent.com/73013959/145513939-c49b4bce-4e34-42ad-874e-03ecb87dd385.png)
 
-### Landlord Register-A-Property Screen:
-
 ![image](https://user-images.githubusercontent.com/73013959/145514039-00b68727-94c6-41fb-a21d-0048a095db05.png)
+### Landlord Register-A-Property Screen:
+![image](https://user-images.githubusercontent.com/67707288/148140638-e7b46329-4418-4c3e-af2c-01557cadf968.png)
 
 ### Unregistered Renter (Guest) Screen
 
